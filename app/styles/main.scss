@@ -1,0 +1,46 @@
+// bower:scss
+// endbower
+
+body {
+  background: url("../images/background-wall.JPG");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: local;
+  height: 100%;
+
+  font-family: 'Abel', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.me {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    height: 600px;
+}
+
+.head {
+    margin-left: 36px;
+    margin-bottom: 36px;
+}
+
+ul {
+    list-style: none;
+
+    li {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+}
+
+
+
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}

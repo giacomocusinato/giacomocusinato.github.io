@@ -1,11 +1,18 @@
-# System files
-._*
+# Dependencies directories
+bower_components
+test/bower_components
+node_modules
+
+# Output directories
+dist
+.tmp
+
+# Sass files
+.sass-cache
+
+# Mac files
 .DS_Store
-Thumbs.db
+._*
 
-
-# IDE’s files or folders
-.idea
-.project
-.sublime-project
-.sublime-workspace
+# Temp files
+images/*
