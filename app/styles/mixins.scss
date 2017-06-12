@@ -1,0 +1,17 @@
+@mixin bg-transition($duration, $timing) {
+  -webkit-transition: all $duration $timing;
+  -moz-transition: all $duration $timing;
+  -o-transition: all $duration $timing;
+  -ms-transition: all $duration $timing;
+  transition: all $duration $timing;
+}
+
+@mixin bg-image($url) {
+  background-image: url($url);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
