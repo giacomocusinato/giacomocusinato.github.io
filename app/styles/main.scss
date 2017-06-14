@@ -54,24 +54,40 @@ nav {
     }
   }
 
-  ul {
+  ul.menu {
     list-style: none;
 
-    li {
+    li.menu-item {
       font-size: 24px;
       font-weight: bold;
       margin-bottom: 12px;
       cursor: pointer;
       display: none;
 
-      &:hover {
-        a {
+      a {
+        color: #555;
+
+        &:hover, &.active {
           color: #333;
         }
       }
 
-      a {
-        color: #555;
+      .sub-menu {
+        list-style-type: none;
+        margin: 6px 0 0 -32px;
+      }
+
+      .sub-menu-item {
+        display: none;
+        font-size: 18px;
+
+        a {
+          color: #777;
+
+          &:hover, &.active {
+            color: #333;
+          }
+        }
       }
     }
   }
@@ -98,11 +114,16 @@ main {
     display: none;
   }
 
-  section.photos img {
-    height: 400px;
-    border: 1px solid #ccc;
-    display: none;
-    margin-top: 16px;
+  section.gallery {
+    ul.photos {
+      list-style-type: none;
+    }
+
+    img {
+      height: 400px;
+      border: 1px solid #ccc;
+      margin-top: 16px;
+    }
   }
 }
 

@@ -3,48 +3,62 @@
   var bg = new Image();
   var current_photo = 0;
 
+
   $('header').fadeIn('slow').addClass('animated fadeIn');
 
-  $('nav ul li').each(function(i, item) {
+  $('.menu-item').each(function(i, item) {
     $(item).delay(800 + i*600).fadeIn().addClass('animated slideInDown');
   });
-
 
   $('.title').click(function() {
     location.reload();
   });
 
-  $('.menu-item.about').click(function() {
+
+  $('.menu-item.about > a').click(function() {
+    $('.menu-item a').removeClass('active');
+    $(this).addClass('active');
     $('body').removeClass('bg-main').addClass('bg-white');
 
     $('section').hide();
     $('section.about').delay(400).fadeIn('slow');
   });
 
-  $('.menu-item.cv').click(function() {
+  $('.menu-item.cv > a').click(function() {
+    $('.menu-item a').removeClass('active');
+    $(this).addClass('active');
     $('body').removeClass('bg-main').addClass('bg-wall');
 
     $('section').hide();
     $('section.cv').delay(400).fadeIn('slow');
   });
 
-  $('.menu-item.photography').click(function() {
-    $('body').removeClass('bg-main').addClass('bg-white');
-
-    $('section').hide();
-    $('html').css('background', 'white');
-    $('section.photos').delay(400).fadeIn('slow');
-    $('.photos img').eq(current_photo).show();
-    // $('.photos img').each(function(i, el) {
-    //   $(el).delay(600 + 400 * i).fadeIn('slow');
-    // });
-
+  $('.menu-item.photography > a').click(function() {
+    if ($(this).hasClass('opened')) {
+      $('.menu-item a').removeClass('active');
+      $('.sub-menu-item').each(function(i, item) {
+        $(item).fadeOut();
+      });
+      $(this).removeClass('opened');
+    } else {
+      $(this).addClass('active');
+      $('.sub-menu-item').each(function(i, item) {
+        $(item).fadeIn().addClass('animated slideInDown');
+      });
+      $(this).addClass('opened');
+    }
   });
 
-  $('.photos img').click(function() {
-    $('.photos img').eq(current_photo).hide();
-    current_photo = current_photo + 1;
-    $('.photos img').eq(current_photo).show();
+  $('.sub-menu-item a').click(function() {
+    $('.sub-menu-item a').removeClass('active');
+    $(this).addClass('active');
+
+    $('.photos li').hide();
+    $('.photos li.' + $(this).attr('data-filter')).show();
+
+    $('body').removeClass('bg-main').addClass('bg-white');
+    $('section').hide();
+    $('section.gallery').delay(400).fadeIn('slow');
   });
 
 
