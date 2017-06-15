@@ -53,8 +53,8 @@
     $('.sub-menu-item a').removeClass('active');
     $(this).addClass('active');
 
-    $('.photos li').hide();
-    $('.photos li.' + $(this).attr('data-filter')).show();
+    $('.photos').hide();
+    $('.photos.' + $(this).attr('data-filter')).show();
 
     $('body').removeClass('bg-main').addClass('bg-white');
     $('section').hide();
