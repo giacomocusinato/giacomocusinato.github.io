@@ -7,7 +7,7 @@
   $('header').fadeIn('slow').addClass('animated fadeIn');
 
   $('.menu-item').each(function(i, item) {
-    $(item).delay(800 + i*600).fadeIn().addClass('animated slideInDown');
+    $(item).delay(800 + i * 600).fadeIn().addClass('animated slideInDown');
   });
 
   $('.title').click(function() {
@@ -53,8 +53,23 @@
     $('.sub-menu-item a').removeClass('active');
     $(this).addClass('active');
 
+    var category = $(this).attr('data-filter');
+
     $('.photos').hide();
-    $('.photos.' + $(this).attr('data-filter')).show();
+    $('.photos.' + category).show();
+    $('.photos.' + category).fotorama({
+      width: 600,
+      ratio: "6/4",
+      minwidth: 200,
+      maxwidth: 600,
+      minheight: 300,
+      maxheight: 400,
+      allowfullscreen: true,
+      fit: "contain",
+      nav: false,
+      transition: "slide",
+      clicktransition: "crossfade"
+    });
 
     $('body').removeClass('bg-main').addClass('bg-white');
     $('section').hide();

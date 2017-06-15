@@ -115,15 +115,7 @@ main {
   }
 
   section.gallery {
-    ul.photos {
-      list-style-type: none;
-    }
-
-    img {
-      height: 400px;
-      border: 1px solid #ccc;
-      margin-top: 16px;
-    }
+    //margin-left: -100px;
   }
 }
 
