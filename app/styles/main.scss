@@ -91,6 +91,20 @@ nav {
       }
     }
   }
+
+  .ref-icon {
+    float: left;
+    display: none;
+
+    &:first-of-type {
+      margin: 0 8px 0 42px;
+    }
+
+    img {
+      width: 20px;
+      color: red;
+    }
+  }
 }
 
 main {

@@ -10,6 +10,15 @@
     $(item).delay(800 + i * 600).fadeIn().addClass('animated slideInDown');
   });
 
+  $('.ref-icon').delay(3200).each(function(i, item) {
+    $(this).delay(600 * i).fadeIn();
+  });
+  $('.ref-icon').hover(function() {
+    $(this).addClass('animated pulse');
+  }, function() {
+    $(this).removeClass('animated pulse');
+  });
+
   $('.title').click(function() {
     location.reload();
   });
