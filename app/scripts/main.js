@@ -1,8 +1,7 @@
 (function() {
+  'use strict';
 
   var bg = new Image();
-  var current_photo = 0;
-
 
   $('header').fadeIn('slow').addClass('animated fadeIn');
 
@@ -11,7 +10,7 @@
   });
 
   $('.ref-icon').delay(3200).each(function(i, item) {
-    $(this).delay(600 * i).fadeIn();
+    $(item).delay(600 * i).fadeIn();
   });
   $('.ref-icon').hover(function() {
     $(this).addClass('animated pulse');
@@ -60,16 +59,16 @@
     $('.photos.' + category).show();
     $('.photos.' + category).fotorama({
       width: 600,
-      ratio: "6/4",
+      ratio: '6/4',
       minwidth: 200,
       maxwidth: 600,
       minheight: 300,
       maxheight: 400,
       allowfullscreen: true,
-      fit: "contain",
+      fit: 'contain',
       nav: false,
-      transition: "slide",
-      clicktransition: "crossfade"
+      transition: 'slide',
+      clicktransition: 'crossfade'
     });
 
     $('body').removeClass('bg-main').addClass('bg-white');
@@ -97,14 +96,14 @@
 
   function loadBackground() {
     if (!!bg.src) {
-      $("body").css("background-image", bg.src);
+      $('body').css('background-image', bg.src);
       return;
     }
 
     bg.onload = function() {
-      $("body").css("background-image", "url(http://www.solidbackgrounds.com/images/2560x1440/2560x1440-white-solid-color-background.jpg)");
-    }
-    bg.src = "../images/background-wall.jpg";
+      $('body').css('background-image', 'url(http://www.solidbackgrounds.com/images/2560x1440/2560x1440-white-solid-color-background.jpg)');
+    };
+    bg.src = '../images/background-wall.jpg';
   }
 
 })();
