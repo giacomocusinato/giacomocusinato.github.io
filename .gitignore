@@ -15,5 +15,4 @@ dist
 ._*
 
 # Temp files
-images/*
 data
