@@ -40,7 +40,7 @@
 
     $('.menu-item a').removeClass('active');
     $(this).addClass('active');
-    $('body').removeClass('bg-main').addClass('bg-wall');
+    $('body').removeClass('bg-main').addClass('bg-white');
 
     $('section').hide();
     $('section.cv').delay(400).fadeIn('slow');
