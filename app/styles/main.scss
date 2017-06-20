@@ -23,6 +23,15 @@ body {
     @include bg-image("../images/background-white.jpg");
     @include bg-transition(0.5s, ease-out);
   }
+
+  @media screen and (max-width: 768px) {
+    background-image: url("../images/background-wall.jpg") !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: scroll;
+  }
 }
 
 a {
@@ -38,6 +47,10 @@ nav {
   margin-top: 24px;
   width: 320px;
   position: fixed;
+
+  @media screen and (max-width: 768px) {
+    position: relative;
+  }
 
   header {
     margin-left: 36px;
@@ -123,6 +136,14 @@ main {
   padding-top: 188px;
   position: fixed;
   overflow: auto;
+
+  @media screen and (max-width: 768px) {
+    width: 80%;
+    height: 100%;
+    margin: 72px 36px 0 36px;
+    padding: 0;
+    position: relative;
+  }
 
   section {
     display: none;
