@@ -14,11 +14,7 @@ body {
     @include bg-image("../images/background-full.jpg");
 
     @media screen and (max-width: 768px) {
-      background-image: url("../images/background-wall.jpg");
-      -webkit-background-size: auto 100%;
-      -o-background-size: auto 100%;
-      background-size: auto 100%;
-      background-repeat: no-repeat;
+      background-image: url("../images/background-white.jpg");
     }
   }
 
