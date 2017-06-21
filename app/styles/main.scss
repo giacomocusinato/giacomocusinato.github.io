@@ -15,10 +15,9 @@ body {
 
     @media screen and (max-width: 768px) {
       background-image: url("../images/background-wall.jpg");
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
+      -webkit-background-size: auto 100%;
+      -o-background-size: auto 100%;
+      background-size: auto 100%;
       background-repeat: no-repeat;
     }
   }
