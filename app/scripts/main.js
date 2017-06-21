@@ -73,7 +73,7 @@
       });
     } else {
       $('.photos.' + category).fotorama({
-        width: "100%",
+        width: '100%',
         ratio: '6/4',
         allowfullscreen: true,
         fit: 'contain',
