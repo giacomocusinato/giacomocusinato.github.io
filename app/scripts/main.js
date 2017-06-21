@@ -56,19 +56,32 @@
 
     $('.photos').hide();
     $('.photos.' + category).show();
-    $('.photos.' + category).fotorama({
-      width: 600,
-      ratio: '6/4',
-      minwidth: 200,
-      maxwidth: 600,
-      minheight: 300,
-      maxheight: 400,
-      allowfullscreen: true,
-      fit: 'contain',
-      nav: false,
-      transition: 'slide',
-      clicktransition: 'crossfade'
-    });
+
+    if ($(window).width() > 768) {
+      $('.photos.' + category).fotorama({
+        width: 600,
+        ratio: '6/4',
+        minwidth: 200,
+        maxwidth: 600,
+        minheight: 300,
+        maxheight: 400,
+        allowfullscreen: true,
+        fit: 'contain',
+        nav: false,
+        transition: 'slide',
+        clicktransition: 'crossfade'
+      });
+    } else {
+      $('.photos.' + category).fotorama({
+        width: "100%",
+        ratio: '6/4',
+        allowfullscreen: true,
+        fit: 'contain',
+        nav: false,
+        transition: 'slide',
+        clicktransition: 'crossfade'
+      });
+    }
 
     $('body').removeClass('bg-main').addClass('bg-white');
     $('section').hide();
