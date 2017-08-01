@@ -1,0 +1,26 @@
+[{
+  "Id": "598099b16a3fa16b96434cb2",
+  "Code": "Y1",
+  "Name": "Task Type One",
+  "IsDeleted": false
+}, {
+  "Id": "598099b76a3fa16b96434cb3",
+  "Code": "Y2",
+  "Name": "Task Type Two",
+  "IsDeleted": false
+}, {
+  "Id": "598099be6a3fa16b96434cb4",
+  "Code": "Y3",
+  "Name": "Task Type Three",
+  "IsDeleted": false
+}, {
+  "Id": "598099c76a3fa16b96434cb5",
+  "Code": "Y4",
+  "Name": "Task Type Four",
+  "IsDeleted": false
+}, {
+  "Id": "598099ce6a3fa16b96434cb6",
+  "Code": "Y5",
+  "Name": "Task Type Five",
+  "IsDeleted": false
+}]

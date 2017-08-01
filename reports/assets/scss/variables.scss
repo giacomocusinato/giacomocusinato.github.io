@@ -1,0 +1,23 @@
+// Screen sizes
+
+$break-large: 1024px;
+$break-medium: 640px;
+
+// Layout
+
+$sidebar-width: 250px;
+$slide-time: 0.5s;
+
+// Branding
+
+$brand-primary: #1E6BB1;
+$dark-gunmetal: #1C2128;
+$charcoal: darken($brand-primary, 15%);//#364156;
+$ghost-white: #FAFAFF;
+$delete-red: #fa525e;
+
+
+// Associations
+
+$sidebar-color: $brand-primary;
+$main-bg-color: $ghost-white;

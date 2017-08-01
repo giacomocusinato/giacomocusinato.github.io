@@ -1,0 +1,105 @@
+.side-bar {
+  background-color: $sidebar-color;
+  box-shadow: inset 0px 0px 38px -8px rgba(5,38,66,1);
+
+  &.toggle-in {
+    @include keyframes(slide-sidebar-in) {
+      0% { left: 0; }
+      100% { left: $sidebar-width; }
+    }
+    @media screen and (max-width: $break-large) {
+      animation: slide-sidebar-in $slide-time forwards;
+    }
+  }
+
+  &.toggle-out {
+    @include keyframes(slide-sidebar-out) {
+      0% { left: $sidebar-width; }
+      100% { left: 0; }
+    }
+    @media screen and (max-width: $break-large) {
+      animation: slide-sidebar-out $slide-time forwards;
+    }
+  }
+}
+
+.logo-container {
+  background-color: white;
+  width: 100%;
+  background-color: $ghost-white;
+  box-shadow: inset 0px 0px 38px -8px rgba(5,38,66,1);
+}
+img.logo {
+  width: 214px;
+  margin: 32px 12px;
+
+}
+
+p.menu-area-title {
+  font-size: 14px;
+  color: white;
+  padding: 12px 0 6px 16px;
+  margin: 0;
+  width: 100%;
+  border-top: 1px solid darken($brand-primary, 6%);
+}
+li.menu-item a  {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.4em;
+}
+
+li.menu-item > a:hover,
+li.menu-item.active > a, {
+  background-color: lighten($brand-primary, 6%);
+}
+
+.sidebar-toggle {
+  background-color: $sidebar-color;
+}
+
+.main-section {
+  position: fixed;
+  width: 100%;
+
+  @media screen and (min-width: $break-large) {
+    width: calc(100% - $sidebar-width);
+    left: $sidebar-width;
+    z-index: 1;
+  }
+
+  &.toggle-in {
+    @include keyframes(slide-main-in) {
+      0% { left: 0px; }
+      100% { left: 250px; }
+    }
+    @media screen and (max-width: $break-large) {
+      animation: slide-main-in $slide-time forwards;
+      width: calc(100% + 500px);
+    }
+  }
+
+  &.toggle-out {
+    @include keyframes(slide-main-out) {
+      0% { left: $sidebar-width; }
+      100% { left: 0; }
+    }
+    @media screen and (max-width: $break-large) {
+      animation: slide-main-out $slide-time forwards;
+    }
+  }
+}
+
+.main-section-content {
+  position: fixed;
+  padding: 24px;
+  width: calc(100% - 250px);
+  height: 100%;
+  overflow: scroll;
+  background-color: $main-bg-color;
+
+  @media screen and (max-width: $break-large) {
+    width: 100%;
+  }
+}

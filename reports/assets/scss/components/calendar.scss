@@ -1,0 +1,48 @@
+.calendar-header-wrapper {
+  margin: 0 12px 12px 0;
+  text-align: center;
+
+  .calendar-header {
+    display: inline-block;
+  }
+
+  h5 {
+    font-size: 32px;
+    text-transform: capitalize;
+    display: inline;
+
+    @media screen and (max-width: $break-medium) {
+      font-size: 24px;
+    }
+  }
+  .month-arrow > img {
+    width: 22px;
+    opacity: 0.6;
+    margin: 0 12px 12px 12px;
+
+    @media screen and (max-width: $break-medium) {
+      margin: 0 6px 6px 6px;
+      width: 16px;
+    }
+  }
+  .month-arrow.reverse > img {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
+.cal-day-selected,
+.cal-day-selected:hover {
+  background-color: $light-gray !important;
+}
+
+.cal-day-badge {
+  background-color: $brand-primary !important;
+}
+
+.cal-day-cell.cal-today {
+  background-color: $main-bg-color !important;
+  .cal-day-number {
+     font-size: 1.2em !important;
+   }
+}
