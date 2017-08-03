@@ -21,6 +21,22 @@
     location.reload();
   });
 
+  $('.image-container').hover(function() {
+    $(this).find('.overlay').animate({
+      'opacity': 0.2
+    }, 600);
+    $(this).find('h2').animate({
+      'opacity': 0.0
+    }, 600);
+  }, function() {
+    $(this).find('.overlay').animate({
+      'opacity': 0.9
+    }, 600);
+    $(this).find('h2').animate({
+      'opacity': 0.9
+    }, 600);
+  });
+
 
   $('.menu-item > a').click(function() {
     var section = $(this).attr('data-open');

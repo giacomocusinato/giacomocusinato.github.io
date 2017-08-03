@@ -1,6 +1,5 @@
 // bower:scss
 // endbower
-
 @import './mixins';
 
 body {
@@ -10,17 +9,12 @@ body {
   color: #333;
   overflow: hidden;
 
+
   &.bg-main {
     @include bg-image("../images/background-full.jpg");
-
     @media screen and (max-width: 768px) {
       background-image: url("../images/background-white.jpg");
     }
-  }
-
-  &.bg-wall {
-    @include bg-image("../images/background-wall.jpg");
-    @include bg-transition(0.5s, ease-out);
   }
 
   &.bg-white {
@@ -46,9 +40,11 @@ nav {
   margin: 24px 0 0 36px;
   width: 320px;
   position: fixed;
-
   @media screen and (max-width: 768px) {
     position: relative;
+  }
+  @media screen and (max-width: 480px) {
+    margin-left: 24px;
   }
 
   header {
@@ -79,7 +75,8 @@ nav {
       a {
         color: #555;
 
-        &:hover, &.active {
+        &.active,
+        &:hover {
           color: #333;
         }
       }
@@ -97,7 +94,8 @@ nav {
         a {
           color: #777;
 
-          &:hover, &.active {
+          &.active,
+          &:hover {
             color: #333;
           }
         }
@@ -121,28 +119,30 @@ nav {
 }
 
 main {
-    -ms-overflow-style: none;
-    overflow: -moz-scrollbars-none;
-}
-main::-webkit-scrollbar {
-    display: none;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
 }
 
+main::-webkit-scrollbar {
+  display: none;
+}
 
 main {
   width: calc(100% - 500px);
-  height: calc(100% - 200px);
+  height: calc(100% - 168px);
   margin: 0 200px 0 400px;
   padding-top: 168px;
   position: fixed;
-  overflow: auto;
-
+  overflow: scroll;
   @media screen and (max-width: 768px) {
     width: 80%;
     height: 100%;
     margin: 72px 36px 0 36px;
     padding: 0;
     position: relative;
+  }
+  @media screen and (max-width: 480px) {
+    margin-left: 24px;
   }
 
   section {
@@ -153,13 +153,15 @@ main {
     .intro {
       font-weight: 400;
     }
+
     p {
       max-width: 600px;
     }
   }
 
   section.cv {
-    p, ul {
+    p,
+    ul {
       max-width: 640px;
     }
 
@@ -170,6 +172,7 @@ main {
     span.bolder {
       font-weight: 400;
     }
+
     h2 {
       font-size: 20px;
       font-weight: 500;
@@ -180,11 +183,13 @@ main {
       display: inline;
       font-weight: 400;
     }
+
     .job-role {
       font-weight: 300;
       display: inline;
       margin-left: 6px;
     }
+
     .job-desc {
       margin-top: 8px;
     }
@@ -210,11 +215,106 @@ main {
         font-weight: 300;
       }
     }
-  }
 
-  section.gallery {
+    .download {
+      color: #333;
+      font-weight: 500;
+      font-size: 20px;
+    }
+  }
+  // section.gallery {
+  //   padding-top: 16px;
+  //   margin-bottom: 24px;
+  // }
+  section.works {
     padding-top: 16px;
-    margin-bottom: 24px;
+  }
+  .work-container {
+    clear: both;
+    display: block;
+    height: 220px;
+    max-width: 660px;
+
+
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .image-container {
+      position: relative;
+      width: 250px;
+      height: 153px;
+      display: inline-block;
+      float: left;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-color: #333;
+      opacity: 0.9;
+    }
+
+    .overlay h2 {
+      margin: 0;
+      color: white;
+      font-size: 20px;
+      font-weight: 400;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      position: absolute;
+    }
+
+    .description {
+      width: calc(100% - 292px);
+      margin: -4px 0 0 12px;
+      float: left;
+
+      p {
+        margin: 6px;
+      }
+
+      .content {
+        margin-top: 12px;
+      }
+
+      @media screen and (min-width: 0px) and (max-width: 676px) {
+        width: auto;
+        margin: 12px 0 18px 0;
+        clear: both;
+
+        p { margin: 0 0 6px 0; }
+      }
+
+      @media screen and (min-width: 769px) and (max-width: 1065px) {
+        width: auto;
+        margin: 12px 0 18px 0;
+        clear: both;
+
+        p { margin: 0 0 6px 0; }
+      }
+    }
+
+    .bolder {
+      font-weight: 400;
+    }
+
+    .underline {
+      text-decoration: underline;
+    }
   }
 }
 
