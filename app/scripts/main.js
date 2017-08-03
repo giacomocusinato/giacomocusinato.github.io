@@ -8,7 +8,7 @@
     $(item).delay(800 + i * 600).fadeIn().addClass('animated slideInDown');
   });
 
-  $('.ref-icon').delay(2600).each(function(i, item) {
+  $('.ref-icon').delay(3200).each(function(i, item) {
     $(item).delay(600 * i).fadeIn();
   });
   $('.ref-icon').hover(function() {
