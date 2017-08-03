@@ -1,16 +1,20 @@
 (function() {
 
-  var bg = new Image();
+  preloadBackground(init);
+  
+  function init() {
+    $('html').show();
 
-  $('header').fadeIn('slow').addClass('animated fadeIn');
+    $('header').fadeIn('slow').addClass('animated fadeIn');
 
-  $('.menu-item').each(function(i, item) {
-    $(item).delay(800 + i * 600).fadeIn().addClass('animated slideInDown');
-  });
+    $('.menu-item').each(function(i, item) {
+      $(item).delay(800 + i * 600).fadeIn().addClass('animated slideInDown');
+    });
+    $('.ref-icon').delay(3200).each(function(i, item) {
+      $(item).delay(600 * i).fadeIn();
+    });
+  }
 
-  $('.ref-icon').delay(3200).each(function(i, item) {
-    $(item).delay(600 * i).fadeIn();
-  });
   $('.ref-icon').hover(function() {
     $(this).addClass('animated pulse');
   }, function() {
@@ -51,15 +55,13 @@
     $('section.' + section).delay(400).fadeIn('slow');
   });
 
-  function loadBackground() {
-    if (!!bg.src) {
-      $('body').css('background-image', bg.src);
-      return;
-    }
 
+  function preloadBackground(callback) {
+    var bg = new Image();
     bg.onload = function() {
-      $('body').css('background-image', 'url(http://www.solidbackgrounds.com/images/2560x1440/2560x1440-white-solid-color-background.jpg)');
-    };
-    bg.src = '../images/background-wall.jpg';
-  }
+      callback();
+    }
+    bg.src = 'images/background-full.jpg';
+  };
+
 })();
